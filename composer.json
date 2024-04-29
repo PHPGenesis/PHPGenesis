@@ -50,7 +50,9 @@
   },
   "autoload": {
     "psr-4": {
-      "PHPGenesis\\CLI\\": "src/CLI/src/"
+      "PHPGenesis\\CLI\\": "src/CLI/src/",
+      "PHPGenesis\\Common\\": "src/Common/src/",
+      "PHPGenesis\\Logger\\": "src/Logger/src/"
     }
   },
   "authors": [
@@ -67,7 +69,9 @@
     }
   ],
   "replace": {
-    "phpgenesis/cli": "self.version"
+    "phpgenesis/cli": "self.version",
+    "phpgenesis/common": "self.version",
+    "phpgenesis/logger": "self.version"
   },
   "minimum-stability": "stable",
   "prefer-stable": true

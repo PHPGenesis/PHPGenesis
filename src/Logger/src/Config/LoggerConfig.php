@@ -25,7 +25,7 @@ class LoggerConfig
 
         $logger = new LoggerConfig();
         $logger->name = $config->name;
-        $logger->logFileName = CommonConfig::basePath($config->logFileName);
+        $logger->logFileName = CommonConfig::basePath('/' . $config->logFileName);
 
         return $logger;
     }

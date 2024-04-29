@@ -1,0 +1,6 @@
+{
+    "logger": {
+        "name": "phpgenesis",
+        "logFileName": "phpgenesis.log"
+    }
+}

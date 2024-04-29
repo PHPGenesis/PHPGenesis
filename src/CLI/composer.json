@@ -6,8 +6,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.2",
-    "composer-runtime-api": "^2.0",
-    "encoredigitalgroup/stdlib": "^1.0",
+    "phpgenesis/common": "self.version",
     "illuminate/console": "^10|^11",
     "illuminate/filesystem": "^10|^11",
     "illuminate/support": "^10|^11",

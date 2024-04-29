@@ -1,16 +1,16 @@
 {
-  "name": "phpgenesis/logger",
-  "description": "Logger for PHPGenesis",
-  "type": "library",
-  "license": "proprietary",
-  "minimum-stability": "stable",
-  "require": {
-    "php": "^8.2",
-    "phpgenesis/common": "self.version"
-  },
-  "autoload": {
-    "psr-4": {
-      "PHPGenesis\\Logger\\": "src/"
+    "name": "phpgenesis/logger",
+    "description": "Logger for PHPGenesis",
+    "type": "library",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2",
+        "phpgenesis/common": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGenesis\\Logger\\": "src/"
+        }
     }
-  }
 }

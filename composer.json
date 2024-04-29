@@ -1,78 +1,78 @@
 {
-  "name": "phpgenesis/phpgenesis",
-  "type": "project",
-  "description": "Central Repository for PHPGenesis Libraries",
-  "keywords": [
-    "Modules",
-    "PHPGenesis"
-  ],
-  "license": "proprietary",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.encoredigitalgroup.com"
-    }
-  ],
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "sort-packages": true,
-    "allow-plugins": {
-      "pestphp/pest-plugin": true,
-      "php-http/discovery": true,
-      "neronmoon/scriptsdev": true,
-      "phpstan/extension-installer": true
-    }
-  },
-  "require": {
-    "php": "^8.2",
-    "composer-runtime-api": "^2.0",
-    "encoredigitalgroup/stdlib": "^1.0",
-    "encoredigitalgroup/tachyon": "^2.0",
-    "guzzlehttp/guzzle": "6.x|7.x",
-    "illuminate/console": "^10|^11",
-    "illuminate/filesystem": "^10|^11",
-    "illuminate/support": "^10|^11",
-    "laravel/prompts": "^0.1",
-    "rector/rector": "^1.0",
-    "symfony/console": "^6.2|^7.0",
-    "symfony/process": "^6.2|^7.0"
-  },
-  "require-dev": {
-    "neronmoon/scriptsdev": "^0.1",
-    "orchestra/testbench": "^7|^8|^9",
-    "pestphp/pest": "^2",
-    "pestphp/pest-plugin-laravel": "^2",
-    "phpstan/extension-installer": "^1.0",
-    "symplify/monorepo-builder": "^11.2",
-    "tomasvotruba/cognitive-complexity": "^0.2.3",
-    "tomasvotruba/unused-public": "^0.3.7"
-  },
-  "autoload": {
-    "psr-4": {
-      "PHPGenesis\\CLI\\": "src/CLI/src/",
-      "PHPGenesis\\Common\\": "src/Common/src/",
-      "PHPGenesis\\Logger\\": "src/Logger/src/"
-    }
-  },
-  "authors": [
-    {
-      "name": "Encore Digital Group",
-      "email": "opensource@encoredigitalgroup.com",
-      "homepage": "https://encoredigitalgroup.com",
-      "role": "Owner"
+    "name": "phpgenesis/phpgenesis",
+    "type": "project",
+    "description": "Central Repository for PHPGenesis Libraries",
+    "keywords": [
+        "Modules",
+        "PHPGenesis"
+    ],
+    "license": "proprietary",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.encoredigitalgroup.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "neronmoon/scriptsdev": true,
+            "phpstan/extension-installer": true
+        }
     },
-    {
-      "name": "Marc Beinder",
-      "homepage": "https://marcbeinder.com",
-      "role": "Maintainer"
-    }
-  ],
-  "replace": {
-    "phpgenesis/cli": "self.version",
-    "phpgenesis/common": "self.version",
-    "phpgenesis/logger": "self.version"
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true
+    "require": {
+        "php": "^8.2",
+        "composer-runtime-api": "^2.0",
+        "encoredigitalgroup/stdlib": "^1.0",
+        "encoredigitalgroup/tachyon": "^2.0",
+        "guzzlehttp/guzzle": "6.x|7.x",
+        "illuminate/console": "^10|^11",
+        "illuminate/filesystem": "^10|^11",
+        "illuminate/support": "^10|^11",
+        "laravel/prompts": "^0.1",
+        "rector/rector": "^1.0",
+        "symfony/console": "^6.2|^7.0",
+        "symfony/process": "^6.2|^7.0"
+    },
+    "require-dev": {
+        "neronmoon/scriptsdev": "^0.1",
+        "orchestra/testbench": "^7|^8|^9",
+        "pestphp/pest": "^2",
+        "pestphp/pest-plugin-laravel": "^2",
+        "phpstan/extension-installer": "^1.0",
+        "symplify/monorepo-builder": "^11.2",
+        "tomasvotruba/cognitive-complexity": "^0.2.3",
+        "tomasvotruba/unused-public": "^0.3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGenesis\\CLI\\": "src/CLI/src/",
+            "PHPGenesis\\Common\\": "src/Common/src/",
+            "PHPGenesis\\Logger\\": "src/Logger/src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Encore Digital Group",
+            "email": "opensource@encoredigitalgroup.com",
+            "homepage": "https://encoredigitalgroup.com",
+            "role": "Owner"
+        },
+        {
+            "name": "Marc Beinder",
+            "homepage": "https://marcbeinder.com",
+            "role": "Maintainer"
+        }
+    ],
+    "replace": {
+        "phpgenesis/cli": "self.version",
+        "phpgenesis/common": "self.version",
+        "phpgenesis/logger": "self.version"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

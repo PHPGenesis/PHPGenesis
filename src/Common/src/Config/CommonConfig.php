@@ -4,37 +4,21 @@ namespace PHPGenesis\Common\Config;
 
 use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Composer\Exceptions\PackageNotInstalledException;
+use PHPGenesis\Common\Config\Traits\ConfigUtils;
 use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 use PHPGenesis\Logger\Config\LoggerConfig;
 
 class CommonConfig
 {
+    use ConfigUtils;
+
     const FILE_NAME = '/phpgenesis.json';
-    const PACKAGE_NAME = 'phpgenesis/common';
+    const PACKAGE_NAME = Packages::Common->value;
+    const GLOBAL_PACKAGE_NAME = Packages::PHPGenesis->value;
 
-    public static function basePath(?string $pathToFile = null): string
+    public static function logger(): LoggerConfig
     {
-        $installPath = Composer::installPath() . '/../../..';
-
-        return $installPath . $pathToFile;
-    }
-
-    public static function getFile(): string
-    {
-        $basePath = self::basePath();
-
-        $configFile = file_get_contents($basePath . self::FILE_NAME);
-
-        if(!$configFile) {
-            throw new MissingConfigurationFileException();
-        }
-
-        return $configFile;
-    }
-
-    public static function logger()
-    {
-        if(Composer::installed(LoggerConfig::PACKAGE_NAME)) {
+        if (Composer::installed(str_enum_val(Packages::Logger))) {
             return LoggerConfig::get();
         }
 

@@ -7,8 +7,19 @@ use PHPGenesis\Common\Config\CommonConfig;
 
 class Composer
 {
-    public static function installed(string $packageName): bool
+    public static function installed(string $packageName, bool $global = false): bool
     {
+        if ($global) {
+            if (
+                InstalledVersions::isInstalled($packageName)
+                || InstalledVersions::isInstalled(CommonConfig::GLOBAL_PACKAGE_NAME)
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
         return InstalledVersions::isInstalled($packageName);
     }
 

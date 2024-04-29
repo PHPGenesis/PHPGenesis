@@ -1,0 +1,17 @@
+{
+  "name": "phpgenesis/common",
+  "description": "Shared Functionality for PHPGenesis",
+  "type": "library",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.2",
+    "composer-runtime-api": "^2.0",
+    "encoredigitalgroup/stdlib": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PHPGenesis\\Common\\": "src/"
+    }
+  }
+}

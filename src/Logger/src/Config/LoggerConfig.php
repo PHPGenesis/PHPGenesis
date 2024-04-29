@@ -3,11 +3,12 @@
 namespace PHPGenesis\Logger\Config;
 
 use PHPGenesis\Common\Config\CommonConfig;
+use PHPGenesis\Common\Config\Packages;
 use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
 class LoggerConfig
 {
-    const PACKAGE_NAME = 'phpgenesis/logger';
+    const PACKAGE_NAME = Packages::Logger->value;
 
     public string $name = 'phpgenesis';
     public string $logFileName;

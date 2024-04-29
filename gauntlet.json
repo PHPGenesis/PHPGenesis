@@ -1,0 +1,7 @@
+{
+    "tool": {
+        "rector": false,
+        "phpstan": false,
+        "duster": true
+    }
+}

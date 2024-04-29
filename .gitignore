@@ -143,3 +143,9 @@ fabric.properties
 ########       MacOS      ########
 ##################################
 .DS_Store
+
+##################################
+### Add from IDE Context Menu  ###
+##################################
+/.idea/laravel-idea.xml
+/.idea/blade.xml

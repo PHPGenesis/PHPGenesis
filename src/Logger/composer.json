@@ -6,7 +6,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.2",
-        "phpgenesis/common": "self.version"
+        "phpgenesis/common": "self.version",
+        "monolog/monolog": "^3.6"
     },
     "autoload": {
         "psr-4": {

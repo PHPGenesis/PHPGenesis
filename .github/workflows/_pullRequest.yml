@@ -1,0 +1,30 @@
+name: PullRequest
+
+on:
+    pull_request_target:
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    Duster:
+        name: Duster
+        uses: EncoreDigitalGroup/.github/.github/workflows/dusterFixBlame.yml@v1
+        permissions:
+            contents: write
+            pull-requests: write
+    StaticAnalysis:
+        needs: Duster
+        name: StaticAnalysis
+        uses: EncoreDigitalGroup/.github/.github/workflows/larastan.yml@v1
+        with:
+            composer_auth_json: ${{ vars.COMPOSER_AUTH_JSON }}
+    # Test:
+    #   needs: Duster
+    #   name: Run Tests
+    #   uses: EncoreDigitalGroup/.github/.github/workflows/pest.yml@master
+    AutoMerge:
+        needs: StaticAnalysis
+        name: AutoMerge
+        uses: EncoreDigitalGroup/.github/.github/workflows/dependabotAutoMerge.yml@v1

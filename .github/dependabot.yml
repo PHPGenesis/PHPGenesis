@@ -3,11 +3,20 @@
 # Please see the documentation for all configuration options:
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
-# version: 2
-# updates:
-#   - package-ecosystem: "composer" # See documentation for possible values
-#     directory: "/" # Location of package manifests
-#     schedule:
-#       interval: daily
-#       time: "12:00"
-#       timezone: America/Chicago
+version: 2
+registries:
+    composer:
+        type: composer-repository
+        url: https://packages.encoredigitalgroup.com
+        username: ${{secrets.ENCOREDIGITAL_PACKAGES_USERNAME}}
+        password: ${{secrets.ENCOREDIGITAL_PACKAGES_PASSWORD}}
+updates:
+    -   package-ecosystem: "composer" # See documentation for possible values
+        directory: "/" # Location of package manifests
+        registries:
+            - composer
+        schedule:
+            interval: weekly
+            day: wednesday
+            time: "12:00"
+            timezone: America/Chicago

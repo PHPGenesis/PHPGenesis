@@ -11,7 +11,7 @@ class CommonConfig
 {
     use ConfigUtils;
 
-    const FILE_NAME = '/phpgenesis.json';
+    const FILE_NAME = PhpGenesisConfig::FILE_NAME;
     const PACKAGE_NAME = Packages::Common->value;
     const GLOBAL_PACKAGE_NAME = Packages::PHPGenesis->value;
 

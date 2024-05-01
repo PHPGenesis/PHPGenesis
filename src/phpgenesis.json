@@ -1,6 +1,7 @@
 {
     "logger": {
         "name": "phpgenesis",
-        "logFileName": "phpgenesis.log"
+        "logFileName": "phpgenesis.log",
+        "logLevel": "debug"
     }
 }

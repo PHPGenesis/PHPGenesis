@@ -12,6 +12,7 @@ class LoggerConfig
 
     public string $name = 'phpgenesis';
     public string $logFileName;
+    public string $logLevel = 'debug';
 
     public function __construct()
     {

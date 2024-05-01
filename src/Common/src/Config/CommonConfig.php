@@ -5,7 +5,6 @@ namespace PHPGenesis\Common\Config;
 use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Composer\Exceptions\PackageNotInstalledException;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
-use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 use PHPGenesis\Logger\Config\LoggerConfig;
 
 class CommonConfig

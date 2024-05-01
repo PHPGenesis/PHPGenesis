@@ -4,59 +4,59 @@ namespace PHPGenesis\Logger;
 
 class Logger extends BaseLogger implements ILogger
 {
-    public static function debug(string $message): void
+    public static function debug(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::DEBUG, $message);
+        $logger->log(LogLevel::DEBUG, $message, $context);
     }
 
-    public static function info(string $message): void
+    public static function info(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::INFO, $message);
+        $logger->log(LogLevel::INFO, $message, $context);
     }
 
-    public static function notice(string $message): void
+    public static function notice(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::NOTICE, $message);
+        $logger->log(LogLevel::NOTICE, $message, $context);
     }
 
-    public static function warning(string $message): void
+    public static function warning(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::WARNING, $message);
+        $logger->log(LogLevel::WARNING, $message, $context);
     }
 
-    public static function error(string $message): void
+    public static function error(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::ERROR, $message);
+        $logger->log(LogLevel::ERROR, $message, $context);
     }
 
-    public static function critical(string $message): void
+    public static function critical(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::CRITICAL, $message);
+        $logger->log(LogLevel::CRITICAL, $message, $context);
     }
 
-    public static function alert(string $message): void
+    public static function alert(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::ALERT, $message);
+        $logger->log(LogLevel::ALERT, $message, $context);
     }
 
-    public static function emergency(string $message): void
+    public static function emergency(string $message, ?array $context = []): void
     {
         $logger = new Logger();
 
-        $logger->log(LogLevel::EMERGENCY, $message);
+        $logger->log(LogLevel::EMERGENCY, $message, $context);
     }
 }

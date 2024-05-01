@@ -18,11 +18,9 @@ abstract class BaseLogger
         $this->logger->pushHandler(new StreamHandler(CommonConfig::basePath() . '/phpgenesis.log', Level::Debug));
     }
 
-    protected function log(Level $level, string $message): void
+    protected function log(Level $level, string $message, ?array $context = []): void
     {
-        $loggerFunction = str_lower($level);
-
-        $this->logger->$loggerFunction($message);
+        $this->logger->log($level, $message, $context);
     }
 
 

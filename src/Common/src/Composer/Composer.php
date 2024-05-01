@@ -10,14 +10,7 @@ class Composer
     public static function installed(string $packageName, bool $global = false): bool
     {
         if ($global) {
-            if (
-                InstalledVersions::isInstalled($packageName)
-                || InstalledVersions::isInstalled(CommonConfig::GLOBAL_PACKAGE_NAME)
-            ) {
-                return true;
-            }
-
-            return false;
+            return self::globalInstallCheck($packageName);
         }
 
         return InstalledVersions::isInstalled($packageName);
@@ -26,5 +19,14 @@ class Composer
     public static function installPath(): ?string
     {
         return InstalledVersions::getInstallPath(CommonConfig::PACKAGE_NAME);
+    }
+
+    private static function globalInstallCheck($packageName): bool
+    {
+        if (InstalledVersions::isInstalled($packageName) || InstalledVersions::isInstalled(CommonConfig::GLOBAL_PACKAGE_NAME)) {
+            return true;
+        }
+
+        return false;
     }
 }

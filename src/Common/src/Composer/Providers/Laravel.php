@@ -1,0 +1,20 @@
+<?php
+
+namespace PHPGenesis\Common\Composer\Providers;
+
+use PHPGenesis\Common\Composer\Composer;
+
+class Laravel
+{
+    const PACKAGE_VENDOR = 'laravel';
+
+    public static function installed(string $packageName): bool
+    {
+
+        if (Composer::installed(self::PACKAGE_VENDOR . '/' . $packageName) || Composer::installed(self::PACKAGE_VENDOR . '/framework')) {
+            return true;
+        }
+
+        return false;
+    }
+}

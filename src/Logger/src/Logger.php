@@ -2,7 +2,7 @@
 
 namespace PHPGenesis\Logger;
 
-use PHPGenesis\Common\Composer\Composer;
+use PHPGenesis\Common\Composer\Providers\Laravel;
 use PHPGenesis\Logger\Loggers\LaravelLogger;
 use PHPGenesis\Logger\Loggers\MonoLogger;
 
@@ -10,7 +10,7 @@ class Logger implements ILogger
 {
     public static function debug(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::debug($message, $context);
         } else {
             MonoLogger::debug($message, $context);
@@ -19,7 +19,7 @@ class Logger implements ILogger
 
     public static function info(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::info($message, $context);
         } else {
             MonoLogger::info($message, $context);
@@ -28,7 +28,7 @@ class Logger implements ILogger
 
     public static function notice(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::notice($message, $context);
         } else {
             MonoLogger::notice($message, $context);
@@ -37,7 +37,7 @@ class Logger implements ILogger
 
     public static function warning(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::warning($message, $context);
         } else {
             MonoLogger::warning($message, $context);
@@ -46,7 +46,7 @@ class Logger implements ILogger
 
     public static function error(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::error($message, $context);
         } else {
             MonoLogger::error($message, $context);
@@ -55,7 +55,7 @@ class Logger implements ILogger
 
     public static function critical(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::critical($message, $context);
         } else {
             MonoLogger::critical($message, $context);
@@ -64,7 +64,7 @@ class Logger implements ILogger
 
     public static function alert(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::alert($message, $context);
         } else {
             MonoLogger::alert($message, $context);
@@ -73,7 +73,7 @@ class Logger implements ILogger
 
     public static function emergency(string $message, ?array $context = []): void
     {
-        if (Composer::installed('laravel/framework') || Composer::installed('laravel/support')) {
+        if (Laravel::installed('support')) {
             LaravelLogger::emergency($message, $context);
         } else {
             MonoLogger::emergency($message, $context);

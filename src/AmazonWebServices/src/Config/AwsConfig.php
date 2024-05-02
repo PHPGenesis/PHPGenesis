@@ -45,7 +45,7 @@ class AwsConfig extends BaseConfig implements IModuleConfig
 
     private function resolveCredentialsSecret(object $config): string
     {
-        if (Laravel::installed()) {
+        if (Laravel::installed('foundation')) {
             return config('phpgenesis.amazonWebServices.credentials.secret');
         }
 

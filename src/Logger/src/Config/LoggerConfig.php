@@ -2,11 +2,13 @@
 
 namespace PHPGenesis\Logger\Config;
 
+use PHPGenesis\Common\Config\BaseConfig;
 use PHPGenesis\Common\Config\CommonConfig;
+use PHPGenesis\Common\Config\IModuleConfig;
 use PHPGenesis\Common\Config\Packages;
 use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
-class LoggerConfig
+class LoggerConfig extends BaseConfig implements IModuleConfig
 {
     const PACKAGE_NAME = Packages::Logger->value;
 
@@ -26,8 +28,8 @@ class LoggerConfig
         }
 
         $logger = new LoggerConfig();
-        $logger->name = $config->name;
-        $logger->logFileName = CommonConfig::basePath('/' . $config->logFileName);
+        $logger->name = $config->logger->name;
+        $logger->logFileName = CommonConfig::basePath('/' . $config->logger->logFileName);
 
         return $logger;
     }

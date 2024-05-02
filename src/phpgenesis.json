@@ -1,4 +1,10 @@
 {
+    "amazonWebServices": {
+        "credentials": {
+            "key": "YOUR_KEY",
+            "secret": "YOUR_SECRET_KEY"
+        }
+    },
     "logger": {
         "name": "phpgenesis",
         "logFileName": "phpgenesis.log",

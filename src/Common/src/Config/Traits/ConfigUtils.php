@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Common\Config\Traits;
 
@@ -20,7 +24,7 @@ trait ConfigUtils
 
         $configFile = file_get_contents($basePath . self::FILE_NAME);
 
-        if(!$configFile) {
+        if (!$configFile) {
             throw new MissingConfigurationFileException();
         }
 

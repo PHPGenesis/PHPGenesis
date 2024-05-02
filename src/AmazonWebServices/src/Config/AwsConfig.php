@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\AmazonWebServices\Config;
 
@@ -23,7 +27,7 @@ class AwsConfig extends BaseConfig implements IModuleConfig
 
     public static function applyConfig(?object $config = null): AwsConfig
     {
-        if(is_null($config)) {
+        if (is_null($config)) {
             return new AwsConfig();
         }
 

@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2023-2024. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\AmazonWebServices;

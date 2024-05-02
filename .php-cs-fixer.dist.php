@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 use App\Fixer\ClassNotation\CustomControllerOrderFixer;
 use App\Fixer\ClassNotation\CustomOrderedClassElementsFixer;

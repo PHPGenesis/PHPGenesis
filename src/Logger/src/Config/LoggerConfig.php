@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Logger\Config;
 
@@ -23,7 +27,7 @@ class LoggerConfig extends BaseConfig implements IModuleConfig
 
     public static function applyConfig(?object $config = null): LoggerConfig
     {
-        if(is_null($config)) {
+        if (is_null($config)) {
             return new LoggerConfig();
         }
 

@@ -4,17 +4,17 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src\Config;
+namespace PHPGenesis\Services\AmazonWebServices\Config;
 
 use PHPGenesis\Common\Composer\Providers\Laravel;
 use PHPGenesis\Common\Config\BaseConfig;
 use PHPGenesis\Common\Config\IModuleConfig;
-use PHPGenesis\Common\Config\Packages;
 use stdClass;
 
 class AwsConfig extends BaseConfig implements IModuleConfig
 {
-    const PACKAGE_NAME = Packages::AWS->value;
+    const CONFIG_CREDENTIALS_KEY = 'phpgenesis.amazonWebServices.credentials.key';
+    const CONFIG_CREDENTIALS_SECRET = 'phpgenesis.amazonWebServices.credentials.secret';
 
     public ?object $credentials = null;
 
@@ -38,10 +38,15 @@ class AwsConfig extends BaseConfig implements IModuleConfig
         return $aws;
     }
 
+    public static function get(): AwsConfig
+    {
+        return (new AwsConfig())->applyConfig(parent::get());
+    }
+
     private function resolveCredentialsKey(object $config): string
     {
-        if (Laravel::installed()) {
-            return config('phpgenesis.amazonWebServices.credentials.key');
+        if (Laravel::installed('foundation')) {
+            return config(self::CONFIG_CREDENTIALS_KEY);
         }
 
         return $config->amazonWebServices->credentials->key;
@@ -50,7 +55,7 @@ class AwsConfig extends BaseConfig implements IModuleConfig
     private function resolveCredentialsSecret(object $config): string
     {
         if (Laravel::installed('foundation')) {
-            return config('phpgenesis.amazonWebServices.credentials.secret');
+            return config(self::CONFIG_CREDENTIALS_SECRET);
         }
 
         return $config->amazonWebServices->credentials->secret;

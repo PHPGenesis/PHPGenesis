@@ -8,7 +8,9 @@ namespace PHPGenesis\Services\AmazonWebServices\Config;
 
 use PHPGenesis\Common\Composer\Providers\Laravel;
 use PHPGenesis\Common\Config\BaseConfig;
+use PHPGenesis\Common\Config\CommonConfig;
 use PHPGenesis\Common\Config\IModuleConfig;
+use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 use stdClass;
 
 class AwsConfig extends BaseConfig implements IModuleConfig
@@ -36,6 +38,21 @@ class AwsConfig extends BaseConfig implements IModuleConfig
         $aws->credentials->secret = $aws->resolveCredentialsSecret($config);
 
         return $aws;
+    }
+
+    /**
+     * @return bool
+     * @throws MissingConfigurationFileException
+     */
+    public static function install(): bool
+    {
+        $config = json_decode(CommonConfig::getFile());
+
+        $config->amazonWebServices = new AwsConfig();
+
+        file_put_contents(CommonConfig::basePath('/' . CommonConfig::FILE_NAME), json_encode($config, JSON_PRETTY_PRINT));
+
+        return true;
     }
 
     public static function get(string $key = 'amazonWebServices'): AwsConfig

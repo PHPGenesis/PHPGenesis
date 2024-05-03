@@ -10,6 +10,7 @@ use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Composer\Exceptions\PackageNotInstalledException;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 use PHPGenesis\Logger\Config\LoggerConfig;
+use PHPGenesis\Services\AmazonWebServices\Config\AwsConfig;
 
 class CommonConfig extends BaseConfig implements IModuleConfig
 {
@@ -18,6 +19,15 @@ class CommonConfig extends BaseConfig implements IModuleConfig
     const FILE_NAME = PhpGenesisConfig::FILE_NAME;
     const PACKAGE_NAME = Packages::Common->value;
     const GLOBAL_PACKAGE_NAME = Packages::PHPGenesis->value;
+
+    public static function aws(): BaseConfig
+    {
+        if (Composer::installed(str_enum_val(Packages::AWS))) {
+            return AwsConfig::get();
+        }
+
+        throw new PackageNotInstalledException();
+    }
 
     public static function logger(): LoggerConfig
     {

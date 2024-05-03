@@ -17,8 +17,8 @@ class AwsClientConfiguration
 
         return [
             'credentials' => [
-                'key' => $clientCredentials['key'],
-                'secret' => $clientCredentials['secret'],
+                'key' => $clientCredentials->key,
+                'secret' => $clientCredentials->secret,
             ],
             'region' => $region,
             'version' => $version,

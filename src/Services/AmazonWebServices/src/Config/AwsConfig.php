@@ -38,9 +38,10 @@ class AwsConfig extends BaseConfig implements IModuleConfig
         return $aws;
     }
 
-    public static function get(): AwsConfig
+    public static function get(string $key = 'amazonWebServices'): AwsConfig
     {
-        return (new AwsConfig())->applyConfig(parent::get());
+        $key = 'amazonWebServices';
+        return (new AwsConfig())->applyConfig(parent::get($key));
     }
 
     private function resolveCredentialsKey(object $config): string
@@ -49,7 +50,7 @@ class AwsConfig extends BaseConfig implements IModuleConfig
             return config(self::CONFIG_CREDENTIALS_KEY);
         }
 
-        return $config->amazonWebServices->credentials->key;
+        return $config->credentials->key;
     }
 
     private function resolveCredentialsSecret(object $config): string
@@ -58,6 +59,6 @@ class AwsConfig extends BaseConfig implements IModuleConfig
             return config(self::CONFIG_CREDENTIALS_SECRET);
         }
 
-        return $config->amazonWebServices->credentials->secret;
+        return $config->credentials->secret;
     }
 }

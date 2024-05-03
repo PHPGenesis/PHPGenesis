@@ -6,9 +6,7 @@ used independently or together.
 
 # We Love Laravel
 
-PHPGenesis is not designed to replace any framework, especially Laravel. We love Laravel and use it in many of our
-projects. PHPGenesis is designed to be used with Laravel and other frameworks to make development easier and more
-enjoyable. PHPGenesis can also be used is a standalone PHP project.
+Encore Digital Group writes primarily Laravel Applications. Therefore, a large portion of PHPGenesis is designed to work with Laravel.
 
 # What's Included
 

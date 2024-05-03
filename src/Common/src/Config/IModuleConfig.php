@@ -6,9 +6,7 @@
 
 namespace PHPGenesis\Common\Config;
 
-class PhpGenesisConfig
+interface IModuleConfig
 {
-    const FILE_NAME = '/phpgenesis.json';
-
-    public ?object $logger;
+    public static function get();
 }

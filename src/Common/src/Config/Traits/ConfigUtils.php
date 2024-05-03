@@ -1,29 +1,20 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Common\Config\Traits;
 
+use Exception;
+use LogicException;
 use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
 trait ConfigUtils
 {
-    public static function basePath(?string $pathToFile = null): string
+    public static function get()
     {
-        $installPath = Composer::installPath() . '/../../..';
-
-        return $installPath . $pathToFile;
-    }
-
-    public static function getFile(): string
-    {
-        $basePath = self::basePath();
-
-        $configFile = file_get_contents($basePath . self::FILE_NAME);
-
-        if(!$configFile) {
-            throw new MissingConfigurationFileException();
-        }
-
-        return $configFile;
+        return new self();
     }
 }

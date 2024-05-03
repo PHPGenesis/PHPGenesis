@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Logger;
 
@@ -15,7 +19,7 @@ abstract class BaseLogger
     {
         $this->logger = new Logger('logger');
 
-        $this->logger->pushHandler(new StreamHandler(CommonConfig::basePath() . '/phpgenesis.log', Level::Debug));
+        $this->logger->pushHandler(new StreamHandler('phpgenesis.log', Level::Debug));
     }
 
     protected function log(Level $level, string $message, ?array $context = []): void

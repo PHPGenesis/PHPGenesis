@@ -1,16 +1,16 @@
 {
-    "name": "phpgenesis/logger",
-    "description": "Logger for PHPGenesis",
+    "name": "phpgenesis/aws",
+    "description": "AWS SDK for PHPGenesis",
     "type": "library",
     "license": "proprietary",
     "require": {
         "php": "^8.3",
         "phpgenesis/common": "self.version",
-        "monolog/monolog": "^3.6"
+        "aws/aws-sdk-php": "^3.284"
     },
     "autoload": {
         "psr-4": {
-            "PHPGenesis\\Logger\\": "src/"
+            "PHPGenesis\\Services\\AmazonWebServices\\": "src/"
         }
     },
     "minimum-stability": "stable"

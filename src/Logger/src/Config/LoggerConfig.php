@@ -1,46 +1,19 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Logger\Config;
 
-use PHPGenesis\Common\Config\CommonConfig;
-use PHPGenesis\Common\Config\Packages;
-use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
+use PHPGenesis\Common\Config\IModuleConfig;
+use PHPGenesis\Common\Config\Traits\ConfigUtils;
 
-class LoggerConfig
+class LoggerConfig implements IModuleConfig
 {
-    const PACKAGE_NAME = Packages::Logger->value;
+    use ConfigUtils;
 
     public string $name = 'phpgenesis';
-    public string $logFileName;
+    public string $logFileName = 'phpgenesis.log';
     public string $logLevel = 'debug';
-
-    public function __construct()
-    {
-        $this->logFileName = CommonConfig::basePath('/phpgenesis.log');
-    }
-
-    public static function applyConfig(?object $config = null): LoggerConfig
-    {
-        if(is_null($config)) {
-            return new LoggerConfig();
-        }
-
-        $logger = new LoggerConfig();
-        $logger->name = $config->name;
-        $logger->logFileName = CommonConfig::basePath('/' . $config->logFileName);
-
-        return $logger;
-    }
-
-    public static function get(): LoggerConfig
-    {
-        try {
-            $configFile = json_decode(CommonConfig::getFile());
-
-            return self::applyConfig($configFile);
-
-        } catch (MissingConfigurationFileException $e) {
-            return self::applyConfig();
-        }
-    }
 }

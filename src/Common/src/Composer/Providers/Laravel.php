@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Common\Composer\Providers;
 
@@ -8,7 +12,7 @@ class Laravel
 {
     const PACKAGE_VENDOR = 'laravel';
 
-    public static function installed(string $packageName): bool
+    public static function installed(string $packageName = 'framework'): bool
     {
 
         if (Composer::installed(self::PACKAGE_VENDOR . '/' . $packageName) || Composer::installed(self::PACKAGE_VENDOR . '/framework')) {

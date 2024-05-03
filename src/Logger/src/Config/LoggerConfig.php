@@ -21,6 +21,20 @@ class LoggerConfig extends BaseConfig implements IModuleConfig
         $this->logFileName = CommonConfig::basePath('/phpgenesis.log');
     }
 
+    /**
+     * @throws MissingConfigurationFileException
+     */
+    public static function install(): bool
+    {
+        $config = json_decode(CommonConfig::getFile());
+
+        $config->logger = new LoggerConfig();
+
+        file_put_contents(CommonConfig::basePath('/' . CommonConfig::FILE_NAME), json_encode($config, JSON_PRETTY_PRINT));
+
+        return true;
+    }
+
     public static function applyConfig(?object $config = null): LoggerConfig
     {
         if (is_null($config)) {

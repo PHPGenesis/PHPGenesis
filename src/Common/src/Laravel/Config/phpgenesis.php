@@ -7,13 +7,10 @@
 return [
     'amazonWebServices' => [
         'credentials' => [
-            'key' => 'YOUR_KEY',
-            'secret' => 'YOUR_SECRET_KEY',
+            'key' => env('AWS_ACCESS_KEY_ID', ''),
+            'secret' => env('AWS_SECRET_ACCESS_KEY', ''),
         ],
-    ],
-    'logger' => [
-        'name' => 'phpgenesis',
-        'logFileName' => 'phpgenesis.log',
-        'logLevel' => 'debug',
+        'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+        'version' => '2010-12-01',
     ],
 ];

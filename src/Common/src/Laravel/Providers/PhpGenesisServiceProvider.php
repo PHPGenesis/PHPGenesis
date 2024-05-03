@@ -12,7 +12,7 @@ class PhpGenesisServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-
+        $this->mergeConfigFrom(__DIR__ . '/../Config/phpgenesis.php', 'phpgenesis');
     }
 
     public function boot(): void

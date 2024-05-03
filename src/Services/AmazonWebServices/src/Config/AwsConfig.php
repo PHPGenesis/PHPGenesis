@@ -6,6 +6,7 @@
 
 namespace PHPGenesis\Services\AmazonWebServices\Config;
 
+use Override;
 use PHPGenesis\Common\Composer\Providers\Laravel;
 use PHPGenesis\Common\Config\BaseConfig;
 use PHPGenesis\Common\Config\CommonConfig;
@@ -15,8 +16,8 @@ use stdClass;
 
 class AwsConfig extends BaseConfig implements IModuleConfig
 {
-    const CONFIG_CREDENTIALS_KEY = 'phpgenesis.amazonWebServices.credentials.key';
-    const CONFIG_CREDENTIALS_SECRET = 'phpgenesis.amazonWebServices.credentials.secret';
+    const string CONFIG_CREDENTIALS_KEY = 'phpgenesis.amazonWebServices.credentials.key';
+    const string CONFIG_CREDENTIALS_SECRET = 'phpgenesis.amazonWebServices.credentials.secret';
 
     public ?object $credentials = null;
 
@@ -27,6 +28,7 @@ class AwsConfig extends BaseConfig implements IModuleConfig
         $this->credentials->secret = null;
     }
 
+    #[Override]
     public static function applyConfig(?object $config = null): AwsConfig
     {
         if (is_null($config)) {
@@ -55,6 +57,7 @@ class AwsConfig extends BaseConfig implements IModuleConfig
         return true;
     }
 
+    #[Override]
     public static function get(string $key = 'amazonWebServices'): AwsConfig
     {
         $key = 'amazonWebServices';

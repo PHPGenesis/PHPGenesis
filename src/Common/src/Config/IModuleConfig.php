@@ -8,6 +8,8 @@ namespace PHPGenesis\Common\Config;
 
 interface IModuleConfig
 {
+    public static function install(): bool;
+
     public static function applyConfig(?object $config = null): BaseConfig;
 
     public static function get(string $key): BaseConfig;

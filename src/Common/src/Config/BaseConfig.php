@@ -25,6 +25,14 @@ class BaseConfig implements IModuleConfig
     /**
      * @throws NotImplementedException
      */
+    public static function install(): bool
+    {
+        throw new NotImplementedException();
+    }
+
+    /**
+     * @throws NotImplementedException
+     */
     public static function get(string $key = 'common'): BaseConfig
     {
         try {

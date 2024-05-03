@@ -6,12 +6,14 @@
 
 namespace PHPGenesis\CLI\Commands;
 
+use EncoreDigitalGroup\StdLib\Exceptions\NotImplementedException;
 use PHPGenesis\CLI\Commands\CommandTraits\CommonInputs;
 use PHPGenesis\CLI\Commands\CommandTraits\ConfigurePrompts;
 use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Config\CommonConfig;
 use PHPGenesis\Common\Config\Packages;
 use PHPGenesis\Common\Config\PhpGenesisConfig;
+use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 use PHPGenesis\Logger\Config\LoggerConfig;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,24 +21,29 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InstallCommand extends Command
 {
+    const ARG_PACKAGE = 'package';
+
     use CommonInputs, ConfigurePrompts;
 
     public InputInterface $input;
 
     public OutputInterface $output;
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
-            ->setName('install');
+            ->setName('install')
+            ->addArgument(self::ARG_PACKAGE, null, 'The package to install', 'phpgenesis');
     }
 
     /**
      * Interact with the user before validating the input.
      *
+     * @param InputInterface $input
+     * @param OutputInterface $output
      * @return void
      */
-    protected function interact(InputInterface $input, OutputInterface $output)
+    protected function interact(InputInterface $input, OutputInterface $output): void
     {
         parent::interact($input, $output);
 
@@ -48,17 +55,17 @@ class InstallCommand extends Command
 
     /**
      * Execute the command.
+     * @throws MissingConfigurationFileException
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $config = new PhpGenesisConfig();
-        if (Composer::installed(str_enum_val(Packages::Logger), true)) {
-            $config->logger = new LoggerConfig();
+        if (!file_exists(CommonConfig::basePath('/' . PhpGenesisConfig::FILE_NAME))) {
+            file_put_contents(CommonConfig::basePath('/' . PhpGenesisConfig::FILE_NAME), '{}');
         }
 
-        $config = json_encode($config, JSON_PRETTY_PRINT);
-
-        file_put_contents(CommonConfig::basePath('/' . CommonConfig::FILE_NAME), $config);
+        if (Composer::installed(str_enum_val(Packages::Logger), true) && $this->input->getArgument(self::ARG_PACKAGE) === 'logger') {
+            LoggerConfig::install();
+        }
 
         return Command::SUCCESS;
     }

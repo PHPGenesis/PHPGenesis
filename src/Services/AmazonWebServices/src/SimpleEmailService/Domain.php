@@ -5,7 +5,7 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src\SimpleEmailService;
+namespace PHPGenesis\Services\AmazonWebServices\SimpleEmailService;
 
 use Aws\Exception\AwsException;
 use Aws\Ses\SesClient;

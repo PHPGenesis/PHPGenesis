@@ -5,7 +5,7 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src;
+namespace PHPGenesis\Services\AmazonWebServices;
 
 class ClientConfiguration
 {

@@ -9,13 +9,9 @@ namespace PHPGenesis\Logger\Config;
 use PHPGenesis\Common\Config\BaseConfig;
 use PHPGenesis\Common\Config\CommonConfig;
 use PHPGenesis\Common\Config\IModuleConfig;
-use PHPGenesis\Common\Config\Packages;
-use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
 class LoggerConfig extends BaseConfig implements IModuleConfig
 {
-    const PACKAGE_NAME = Packages::Logger->value;
-
     public string $name = 'phpgenesis';
     public string $logFileName;
     public string $logLevel = 'debug';
@@ -38,15 +34,9 @@ class LoggerConfig extends BaseConfig implements IModuleConfig
         return $logger;
     }
 
-    public static function get(): LoggerConfig
+    public static function get(string $key = 'logger'): LoggerConfig
     {
-        try {
-            $configFile = json_decode(CommonConfig::getFile());
-
-            return self::applyConfig($configFile);
-
-        } catch (MissingConfigurationFileException $e) {
-            return self::applyConfig();
-        }
+        $key = 'logger';
+        return (new LoggerConfig())->applyConfig(parent::get($key));
     }
 }

@@ -7,11 +7,13 @@
 namespace PHPGenesis\Common\Config;
 
 use EncoreDigitalGroup\StdLib\Exceptions\NotImplementedException;
-use EncoreDigitalGroup\StdLib\Objects\ExitCode;
+use PHPGenesis\Common\Config\Traits\ConfigUtils;
 use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
 class BaseConfig implements IModuleConfig
 {
+    use ConfigUtils;
+
     /**
      * @throws NotImplementedException
      */
@@ -23,10 +25,11 @@ class BaseConfig implements IModuleConfig
     /**
      * @throws NotImplementedException
      */
-    public static function get(): BaseConfig
+    public static function get(string $key = 'common'): BaseConfig
     {
         try {
-            return json_decode(CommonConfig::getFile());
+            $configFile = json_decode(CommonConfig::getFile());
+            return CommonConfig::getConfigKey($key, $configFile);
 
         } catch (MissingConfigurationFileException $e) {
             return self::applyConfig();

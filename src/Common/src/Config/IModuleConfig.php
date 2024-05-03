@@ -10,5 +10,5 @@ interface IModuleConfig
 {
     public static function applyConfig(?object $config = null): BaseConfig;
 
-    public static function get(): BaseConfig;
+    public static function get(string $key): BaseConfig;
 }

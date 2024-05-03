@@ -6,6 +6,8 @@
 
 namespace PHPGenesis\Common\Config\Traits;
 
+use Exception;
+use LogicException;
 use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
@@ -18,6 +20,9 @@ trait ConfigUtils
         return $installPath . $pathToFile;
     }
 
+    /**
+     * @throws MissingConfigurationFileException
+     */
     public static function getFile(): string
     {
         $basePath = self::basePath();
@@ -29,5 +34,14 @@ trait ConfigUtils
         }
 
         return $configFile;
+    }
+
+    public static function getConfigKey(string $needle, object $haystack): object
+    {
+        try {
+            return $haystack->$needle;
+        } catch (Exception $e) {
+            throw new LogicException(str_concat_space($needle, 'is not a valid key in the provided object'));
+        }
     }
 }

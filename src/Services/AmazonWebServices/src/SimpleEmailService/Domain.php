@@ -8,8 +8,9 @@
 namespace PHPGenesis\Services\AmazonWebServices\SimpleEmailService;
 
 use Aws\Exception\AwsException;
+use Aws\Result;
 use Aws\Ses\SesClient;
-use PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src\ClientConfiguration;
+use PHPGenesis\Services\AmazonWebServices\AwsClientConfiguration;
 
 class Domain
 {
@@ -17,10 +18,10 @@ class Domain
 
     public static function getSesClient(): SesClient
     {
-        return new SesClient(ClientConfiguration::get());
+        return new SesClient(AwsClientConfiguration::get());
     }
 
-    public function verifyDomainIdentity()
+    public function verifyDomainIdentity(): Result|string
     {
         $SesClient = self::getSesClient();
         try {

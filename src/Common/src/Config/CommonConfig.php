@@ -11,7 +11,7 @@ use PHPGenesis\Common\Composer\Exceptions\PackageNotInstalledException;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 use PHPGenesis\Logger\Config\LoggerConfig;
 
-class CommonConfig
+class CommonConfig extends BaseConfig implements IModuleConfig
 {
     use ConfigUtils;
 

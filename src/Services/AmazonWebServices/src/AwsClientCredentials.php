@@ -7,7 +7,7 @@
 
 namespace PHPGenesis\Services\AmazonWebServices;
 
-class ClientCredentials
+class AwsClientCredentials
 {
     public static function get(): array
     {

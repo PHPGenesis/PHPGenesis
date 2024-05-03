@@ -7,11 +7,11 @@
 
 namespace PHPGenesis\Services\AmazonWebServices;
 
-class ClientConfiguration
+class AwsClientConfiguration
 {
     public static function get(): array
     {
-        $clientCredentials = ClientCredentials::get();
+        $clientCredentials = AwsClientCredentials::get();
         $region = config('encoredigital.aws.region');
         $version = config('encoredigital.aws.version');
 

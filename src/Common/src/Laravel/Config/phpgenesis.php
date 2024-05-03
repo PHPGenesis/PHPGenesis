@@ -7,8 +7,8 @@
 return [
     'amazonWebServices' => [
         'credentials' => [
-            'key' => 'your-key',
-            'secret' => 'your-secret',
+            'key' => 'YOUR_KEY',
+            'secret' => 'YOUR_SECRET_KEY',
         ],
     ],
     'logger' => [

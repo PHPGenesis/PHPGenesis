@@ -12,23 +12,24 @@ use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
 
 class BaseConfig implements IModuleConfig
 {
+    /**
+     * @throws NotImplementedException
+     */
     public static function applyConfig(?object $config = null): BaseConfig
     {
         throw new NotImplementedException();
     }
 
+    /**
+     * @throws NotImplementedException
+     */
     public static function get(): BaseConfig
     {
         try {
-            $configFile = json_decode(CommonConfig::getFile());
-
-            return self::applyConfig($configFile);
+            return json_decode(CommonConfig::getFile());
 
         } catch (MissingConfigurationFileException $e) {
             return self::applyConfig();
-
-        } catch (NotImplementedException $e) {
-            exit(ExitCode::GENERAL_ERROR);
         }
     }
 }

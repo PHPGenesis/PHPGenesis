@@ -5,11 +5,11 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\AmazonWebServices\SimpleEmailService;
+namespace PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src\SimpleEmailService;
 
 use Aws\Exception\AwsException;
 use Aws\Ses\SesClient;
-use PHPGenesis\AmazonWebServices\ClientConfiguration;
+use PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src\ClientConfiguration;
 
 class Domain
 {

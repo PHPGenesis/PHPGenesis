@@ -7,12 +7,6 @@
         "PHPGenesis"
     ],
     "license": "proprietary",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.encoredigitalgroup.com"
-        }
-    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -50,10 +44,10 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPGenesis\\AmazonWebServices\\": "src/AmazonWebServices/src/",
             "PHPGenesis\\CLI\\": "src/CLI/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",
-            "PHPGenesis\\Logger\\": "src/Logger/src/"
+            "PHPGenesis\\Logger\\": "src/Logger/src/",
+            "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/"
         }
     },
     "authors": [

@@ -4,7 +4,7 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\AmazonWebServices\Config;
+namespace PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src\Config;
 
 use PHPGenesis\Common\Composer\Providers\Laravel;
 use PHPGenesis\Common\Config\BaseConfig;

@@ -5,7 +5,7 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\AmazonWebServices;
+namespace PHPGenesis\Services\AmazonWebServices\AmazonWebServices\src;
 
 class ClientCredentials
 {

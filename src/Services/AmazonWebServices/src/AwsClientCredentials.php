@@ -7,13 +7,20 @@
 
 namespace PHPGenesis\Services\AmazonWebServices;
 
+use EncoreDigitalGroup\StdLib\Exceptions\NotImplementedException;
+use PHPGenesis\Services\AmazonWebServices\Config\AwsConfig;
+
 class AwsClientCredentials
 {
-    public static function get(): array
+    public ?string $key;
+    public ?string $secret;
+
+    public static function get(): AwsClientCredentials
     {
-        return [
-            'key' => config('encoredigital.aws.credentials.key'),
-            'secret' => config('encoredigital.aws.credentials.secret'),
-        ];
+        $awsClientCredentials = new self();
+        $awsClientCredentials->key = AwsConfig::get()->credentials->key;
+        $awsClientCredentials->secret = AwsConfig::get()->credentials->secret;
+
+        return $awsClientCredentials;
     }
 }

@@ -12,7 +12,10 @@
     "autoload": {
         "psr-4": {
             "PHPGenesis\\Common\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
     },
     "minimum-stability": "stable"
 }

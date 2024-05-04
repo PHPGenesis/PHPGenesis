@@ -44,6 +44,9 @@
         "tomasvotruba/unused-public": "^0.3.7"
     },
     "autoload": {
+        "files": [
+            "src/Common/src/Helpers/helpers.php"
+        ],
         "psr-4": {
             "PHPGenesis\\CLI\\": "src/CLI/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",

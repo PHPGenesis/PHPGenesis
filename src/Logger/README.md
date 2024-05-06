@@ -2,6 +2,14 @@
 
 The PHPGenesis Logger is an abstraction layer on top of the Laravel Log Facade and Monolog.
 
+### Installation
+
+To install the Logger package, you can use Composer:
+
+```bash
+composer require phpgenesis/logger
+```
+
 ### Usage
 
 To log a message, use the `PHPGenesis\Logger\Logger` class.

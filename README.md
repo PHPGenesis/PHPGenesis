@@ -10,11 +10,30 @@ Encore Digital Group writes primarily Laravel Applications. Therefore, a large p
 
 # What's Included
 
-Encore Digital Group has a number of PHP libraries that are included in PHPGenesis. Some of these libraries include:
+Encore Digital Group has a number of PHP libraries, separate from PHPGenesis, that are included in PHPGenesis. Some of these libraries include:
 
 - [StdLib](https://github.com/EncoreDigitalGroup/StdLib)
 - [SDK-Client-Foundation](https://github.com/EncoreDigitalGroup/SDK-Client-Foundation)
 - [Tachyon](https://github.com/EncoreDigitalGroup/Tachyon)
+
+Using these libraries, PHPGenesis provides:
+
+- [Amazon Web Services](./src/Services/AmazonWebServices/README.md)
+- [Common](./src/Common/README.md)
+- [Logger](./src/Logger/README.md)
+
+There are more libraries that will be added to PHPGenesis in the future. We are currently in the process of extracting these libraries
+from our internal projects and making them available to the public.
+
+# Installation
+
+To install PHPGenesis, you can use Composer:
+
+```bash
+composer require phpgenesis/phpgenesis
+```
+
+If you don't need all of PHPGenesis in your project, you can select only the package you need. These packages can be viewed [here](https://github.com/PHPGenesis).
 
 # License
 

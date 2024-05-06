@@ -1,0 +1,24 @@
+name: DirectorySync
+
+on:
+    workflow_dispatch:
+
+jobs:
+
+    DirectorySync:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                package:
+                    - Common
+                    - Logger
+        steps:
+            -   name: Documentation Directory Sync of ${{ matrix.package }}
+                uses: EncoreDigitalGroup/.github/.github/workflows/directorySync.yml@v1
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GH_GENERAL_ACCESS_TOKEN }}
+                with:
+                    source: 'src/${{ matrix.package }}/docs/'
+                    targetRepo: 'encoredigitalgroup/docs.encoredigitalgroup.com'
+                    targetDirectory: 'docs/Code/PHP/Packages/PHPGenesis/${{ matrix.package }}'

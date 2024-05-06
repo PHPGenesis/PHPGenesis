@@ -1,0 +1,4 @@
+# SimpleEmailService
+
+- [Domain](./domain.md)
+

@@ -17,6 +17,7 @@ jobs:
             token: ${{ secrets.GH_GENERAL_ACCESS_TOKEN }}
 
     Services_AmazonWebServices:
+        needs: Logger
         uses: EncoreDigitalGroup/.github/.github/workflows/directorySync.yml@v1
         with:
             source: 'src/Services/AmazonWebServices/docs/'

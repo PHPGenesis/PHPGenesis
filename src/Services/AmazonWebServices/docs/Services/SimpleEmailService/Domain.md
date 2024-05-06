@@ -13,16 +13,28 @@ Service (SES) specifically for domain-related operations.
 
 ## Class Methods
 
-### `public static function getSesClient(): SesClient`
+### getSesClient()
+
+```php
+public static function getSesClient(): SesClient
+```
 
 This method is used to get an instance of the `SesClient` from the AWS SDK. It uses the `AwsClientConfiguration::get()` method to get the configuration for the client.
 
-### `public function verifyDomainIdentity(): Result|string`
+### verifyDomainIdentity()
+
+```php
+public function verifyDomainIdentity(): Result|string
+```
 
 This method is used to verify the domain identity with AWS SES. It uses the `verifyDomainIdentity` method of the `SesClient` with the domain property of the class. If the
 operation is successful, it returns a `Result` object from the AWS SDK. If there is an error, it catches the `AwsException` and returns the error message as a string.
 
-### `public function verifyDomainDkim(): array|string`
+### verifyDomainDkim()
+
+```php
+public function verifyDomainDkim(): array|string
+```
 
 This method is used to verify the DKIM settings of the domain with AWS SES. It uses the `verifyDomainDkim` method of the `SesClient` with the domain property of the
 class. If the operation is successful, it returns the `DkimTokens` as an array. If there is an error, it catches the `AwsException` and returns the error message as a

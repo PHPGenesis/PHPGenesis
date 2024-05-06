@@ -1,4 +1,8 @@
+---
+title: Simple Email Service
+---
+
 # SimpleEmailService
 
-- [Domain](./domain.md)
+- [Domain](./Domain.md)
 

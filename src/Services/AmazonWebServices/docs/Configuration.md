@@ -1,3 +1,7 @@
+---
+title: Configuration
+---
+
 # AwsConfig Class Documentation
 
 The `AwsConfig` class is part of the `PHPGenesis\Services\AmazonWebServices\Config` namespace. This class provides methods to interact with the AWS configuration
@@ -8,12 +12,6 @@ settings.
 - `public ?object $credentials`: This property holds the AWS credentials. It is an object that contains `key` and `secret` properties.
 - `public string $region`: This property holds the AWS region. The default value is 'us-east-1'.
 - `public string $version`: This property holds the AWS version. The default value is '2010-12-01'.
-
-## Class Methods
-
-### `public function __construct()`
-
-This is the constructor of the `AwsConfig` class. It initializes the `credentials` property with the AWS credentials from the configuration.
 
 ## Usage
 

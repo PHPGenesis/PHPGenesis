@@ -5,15 +5,6 @@ on:
 
 jobs:
 
-    Common:
-        uses: EncoreDigitalGroup/.github/.github/workflows/directorySync.yml@v1
-        with:
-            source: 'src/Common/docs/'
-            targetRepo: 'encoredigitalgroup/docs.encoredigitalgroup.com'
-            targetDirectory: 'docs/Code/PHP/Packages/PHPGenesis/Common'
-        secrets:
-            token: ${{ secrets.GH_GENERAL_ACCESS_TOKEN }}
-
     Logger:
         uses: EncoreDigitalGroup/.github/.github/workflows/directorySync.yml@v1
         with:

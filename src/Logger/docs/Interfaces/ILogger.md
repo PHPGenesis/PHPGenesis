@@ -1,3 +1,7 @@
+---
+title: ILogger
+---
+
 # ILogger Interface Documentation
 
 The `ILogger` interface is part of the `PHPGenesis\Logger` namespace. This interface defines the contract for a logger in the PHPGenesis framework. It provides a set of

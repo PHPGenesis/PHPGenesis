@@ -1,3 +1,7 @@
+---
+title: Logger
+---
+
 # Logger Class Documentation
 
 The `Logger` class is part of the `PHPGenesis\Logger` namespace. This class provides methods to log messages. It implements the `ILogger` interface and uses either

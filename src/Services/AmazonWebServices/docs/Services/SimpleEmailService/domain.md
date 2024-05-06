@@ -1,3 +1,7 @@
+---
+title: Domain
+---
+
 # Domain Class Documentation
 
 The `Domain` class is part of the `PHPGenesis\Services\AmazonWebServices\SimpleEmailService` namespace. This class provides methods to interact with the AWS Simple Email

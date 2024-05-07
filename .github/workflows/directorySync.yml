@@ -12,7 +12,7 @@ jobs:
         with:
             source: 'src/Logger/docs/'
             targetRepo: 'encoredigitalgroup/docs.encoredigitalgroup.com'
-            targetDirectory: 'docs/Code/PHP/Packages/PHPGenesis/Logger'
+            targetDirectory: 'documentationImport/PHPGenesis/Logger'
         secrets:
             token: ${{ secrets.GH_GENERAL_ACCESS_TOKEN }}
 
@@ -22,6 +22,6 @@ jobs:
         with:
             source: 'src/Services/AmazonWebServices/docs/'
             targetRepo: 'encoredigitalgroup/docs.encoredigitalgroup.com'
-            targetDirectory: 'docs/Code/PHP/Packages/PHPGenesis/Services/AmazonWebServices'
+            targetDirectory: 'documentationImport/PHPGenesis/Services/AmazonWebServices'
         secrets:
             token: ${{ secrets.GH_GENERAL_ACCESS_TOKEN }}

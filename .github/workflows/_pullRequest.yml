@@ -19,7 +19,7 @@ jobs:
         name: StaticAnalysis
         uses: EncoreDigitalGroup/.github/.github/workflows/larastan.yml@v1
         with:
-            composer_auth_json: ${{ vars.COMPOSER_AUTH_JSON }}
+            branch: ${{ github.head_ref }}
     # Test:
     #   needs: Duster
     #   name: Run Tests

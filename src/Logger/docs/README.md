@@ -1,5 +1,5 @@
 ---
-title: Logger
+title: Overview
 ---
 
 # PHPGenesis/Logger

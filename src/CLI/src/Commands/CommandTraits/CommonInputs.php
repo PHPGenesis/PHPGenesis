@@ -9,6 +9,7 @@ namespace PHPGenesis\CLI\Commands\CommandTraits;
 use function Laravel\Prompts\select;
 use function Laravel\Prompts\text;
 
+/** @experimental */
 trait CommonInputs
 {
     private function yesNoPrompt(string $label, string $key, string $defaultOption = 'y'): void

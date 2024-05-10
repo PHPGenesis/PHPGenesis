@@ -6,6 +6,7 @@
 
 namespace PHPGenesis\CLI\Commands\Common;
 
+/** @experimental */
 class CommandArgs
 {
 }

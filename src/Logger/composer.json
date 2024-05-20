@@ -8,6 +8,11 @@
         "phpgenesis/common": "self.version",
         "monolog/monolog": "^3.6"
     },
+    "scripts": {
+        "post-autoload-dump": [
+            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "PHPGenesis\\Logger\\": "src/"

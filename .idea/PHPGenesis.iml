@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Common/src" isTestSource="false" packagePrefix="PHPGenesis\Common\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Logger/src" isTestSource="false" packagePrefix="PHPGenesis\Logger\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Services/AmazonWebServices/src" isTestSource="false" packagePrefix="PHPGenesis\Services\AmazonWebServices\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/std" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
@@ -107,6 +108,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/aws/aws-crt-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aws/aws-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/jmespath.php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

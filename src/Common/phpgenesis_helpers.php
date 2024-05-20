@@ -7,7 +7,7 @@
 if (!function_exists('phpgenesis_vendor_dir')) {
     function phpgenesis_vendor_dir(string $path = null): string
     {
-        if ($path = null) {
+        if ($path == null) {
             return __DIR__ . '/../';
         }
 

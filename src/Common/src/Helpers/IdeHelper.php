@@ -13,7 +13,7 @@ class IdeHelper
         if ($isPhpGenesis) {
             file_copy(phpgenesis_common_src('Resources/.editorconfig'), phpgenesis_common_src('../../../.editorconfig'));
         } else {
-            file_copy(phpgenesis_common_src('Resources/.editorconfig'), phpgenesis_vendor_dir('../.editorconfig'));
+            file_copy(phpgenesis_common_src('Resources/.editorconfig'), phpgenesis_vendor_dir('../../.editorconfig'));
         }
 
     }

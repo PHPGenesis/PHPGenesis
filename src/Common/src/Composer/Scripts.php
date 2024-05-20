@@ -18,7 +18,7 @@ class Scripts
 
         $isPhpGenesis = false;
 
-        if ($packageName = 'phpgenesis/phpgenesis') {
+        if ($packageName == 'phpgenesis/phpgenesis') {
             $isPhpGenesis = true;
             echo 'Package is PHPGenesis Monorepo. Modifying IdeHelper::updateEditorConfig() behavior' . PHP_EOL;
         }

@@ -5,16 +5,23 @@
     "license": "proprietary",
     "require": {
         "php": "^8.3",
-        "composer-runtime-api": "*",
+        "composer-runtime-api": "^2.0",
+        "composer/composer": "^2.0",
         "encoredigitalgroup/stdlib": "^1.3",
         "illuminate/support": "^11"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
+        ]
     },
     "autoload": {
         "psr-4": {
             "PHPGenesis\\Common\\": "src/"
         },
         "files": [
-            "src/Helpers/helpers.php"
+            "src/Helpers/helpers.php",
+            "phpgenesis_helpers.php"
         ]
     },
     "minimum-stability": "stable"

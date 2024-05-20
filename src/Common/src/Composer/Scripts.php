@@ -14,7 +14,15 @@ class Scripts
     public static function postAutoloadDump(Event $event): void
     {
         require_once $event->getComposer()->getConfig()->get('vendor-dir') . '/autoload.php';
+        $packageName = $event->getComposer()->getPackage()->getName();
 
-        IdeHelper::updateEditorConfig();
+        $isPhpGenesis = false;
+
+        if ($packageName = 'phpgenesis/phpgenesis') {
+            $isPhpGenesis = true;
+            echo 'Package is PHPGenesis Monorepo. Modifying IdeHelper::updateEditorConfig() behavior' . PHP_EOL;
+        }
+
+        IdeHelper::updateEditorConfig($isPhpGenesis);
     }
 }

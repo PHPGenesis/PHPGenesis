@@ -8,8 +8,13 @@ namespace PHPGenesis\Common\Helpers;
 
 class IdeHelper
 {
-    public static function updateEditorConfig(): void
+    public static function updateEditorConfig(bool $isPhpGenesis): void
     {
-        file_copy(phpgenesis_common_src('Resources/.editorconfig'), phpgenesis_vendor_dir('../.editorconfig'));
+        if ($isPhpGenesis) {
+            file_copy(phpgenesis_common_src('Resources/.editorconfig'), phpgenesis_common_src('../../../.editorconfig'));
+        } else {
+            file_copy(phpgenesis_common_src('Resources/.editorconfig'), phpgenesis_vendor_dir('../.editorconfig'));
+        }
+
     }
 }

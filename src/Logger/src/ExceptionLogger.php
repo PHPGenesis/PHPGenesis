@@ -11,19 +11,83 @@ use Exception;
 /** @experimental */
 class ExceptionLogger
 {
-    public static function debug(Exception $exception, string $message, array $context): void
+    public static function debug(Exception $exception, string $message, array $context = []): void
     {
-        $loggerMessage = 'Exception: {exception.message}. ' . $message;
-        $loggerContext = [
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::debug($loggerMessage, $loggerContext);
+    }
+
+    public static function info(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::info($loggerMessage, $loggerContext);
+    }
+
+    public static function notice(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::notice($loggerMessage, $loggerContext);
+    }
+
+    public static function warning(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::warning($loggerMessage, $loggerContext);
+    }
+
+    public static function error(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::error($loggerMessage, $loggerContext);
+    }
+
+    public static function critical(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::critical($loggerMessage, $loggerContext);
+    }
+
+    public static function alert(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::alert($loggerMessage, $loggerContext);
+    }
+
+    public static function emergency(Exception $exception, string $message, array $context = []): void
+    {
+        $loggerMessage = self::buildMessage($message);
+        $loggerContext = self::buildContext($exception, $context);
+
+        Logger::emergency($loggerMessage, $loggerContext);
+    }
+
+    private static function buildMessage(string $message): string
+    {
+        return 'Exception: {exception.message}. ' . $message;
+    }
+
+    private static function buildContext(Exception $exception, array $context = []): array
+    {
+        return array_merge([
             'exception' => $exception,
             'exception.message' => $exception->getMessage(),
             'exception.code' => $exception->getCode(),
             'exception.file' => $exception->getFile(),
             'exception.line' => $exception->getLine(),
-        ];
-
-        $loggerContext = array_merge($loggerContext, $context);
-
-        Logger::info($loggerMessage, $loggerContext);
+        ], $context);
     }
 }

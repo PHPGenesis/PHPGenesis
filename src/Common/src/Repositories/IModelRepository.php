@@ -14,7 +14,7 @@ interface IModelRepository
 
     public function all();
 
-    public function find(string|int $id, array $columns = ['*']);
+    public function find(string|int $id);
 
     public function update(array $values);
 

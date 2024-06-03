@@ -7,8 +7,6 @@
 namespace PHPGenesis\Services\AmazonWebServices\Config;
 
 use PHPGenesis\Common\Config\IModuleConfig;
-use PHPGenesis\Common\Config\Traits\ConfigUtils;
-use stdClass;
 
 class AwsConfig implements IModuleConfig
 {

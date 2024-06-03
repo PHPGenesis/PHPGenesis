@@ -27,5 +27,17 @@ abstract class BaseLogger
         $this->logger->log($level, $message, $context);
     }
 
+    protected function globalContext(array $context): void
+    {
+        if (isset($_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'])) {
+            $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = array_merge($_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'], $context);
+        } else {
+            $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = $context;
+        }
+
+
+        $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'];
+    }
+
 
 }

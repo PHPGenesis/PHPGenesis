@@ -83,4 +83,22 @@ class Logger implements ILogger
             MonoLogger::emergency($message, $context);
         }
     }
+
+    public static function shareContext(array $context): void
+    {
+        if (Laravel::installed('support')) {
+            LaravelLogger::shareContext($context);
+        } else {
+            MonoLogger::shareContext($context);
+        }
+    }
+
+    public static function withContext(array $context): void
+    {
+        if (Laravel::installed('support')) {
+            LaravelLogger::withContext($context);
+        } else {
+            MonoLogger::withContext($context);
+        }
+    }
 }

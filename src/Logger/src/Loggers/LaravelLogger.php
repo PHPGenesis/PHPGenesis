@@ -54,4 +54,14 @@ class LaravelLogger implements ILogger
     {
         Log::emergency($message, $context);
     }
+
+    public static function shareContext(array $context): void
+    {
+        Log::shareContext($context);
+    }
+
+    public static function withContext(array $context): void
+    {
+        Log::withContext($context);
+    }
 }

@@ -33,7 +33,5 @@ abstract class BaseLogger
         } else {
             $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = $context;
         }
-
-        $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'];
     }
 }

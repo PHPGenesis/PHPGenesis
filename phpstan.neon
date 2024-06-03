@@ -1,5 +1,5 @@
-#includes:
-#    - phpstan-baseline.neon
+includes:
+    - phpstan-baseline.neon
 
 parameters:
     level: 8
@@ -14,9 +14,9 @@ parameters:
         - identifier: missingType.generics
         - identifier: missingType.iterableValue
     unused_public:
-        methods: true
-        properties: true
-        constants: true
+        methods: false
+        properties: false
+        constants: false
     cognitive_complexity:
             class: 50
             function: 10

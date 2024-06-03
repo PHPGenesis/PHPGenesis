@@ -19,93 +19,93 @@ class MonoLogger extends BaseLogger implements ILogger
 {
     public static function debug(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::DEBUG, $message, $context);
+        $monoLogger->log(LogLevel::DEBUG, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function info(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::INFO, $message, $context);
+        $monoLogger->log(LogLevel::INFO, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function notice(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::NOTICE, $message, $context);
+        $monoLogger->log(LogLevel::NOTICE, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function warning(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::WARNING, $message, $context);
+        $monoLogger->log(LogLevel::WARNING, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function error(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::ERROR, $message, $context);
+        $monoLogger->log(LogLevel::ERROR, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function critical(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::CRITICAL, $message, $context);
+        $monoLogger->log(LogLevel::CRITICAL, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function alert(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::ALERT, $message, $context);
+        $monoLogger->log(LogLevel::ALERT, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function emergency(string $message, ?array $context = []): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
-        $logger->log(LogLevel::EMERGENCY, $message, $context);
+        $monoLogger->log(LogLevel::EMERGENCY, $message, $context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function shareContext(array $context): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
         /** @noinspection PhpExpressionResultUnusedInspection */
-        $logger->globalContext($context);
+        $monoLogger->globalContext($context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 
     public static function withContext(array $context): void
     {
-        $logger = new MonoLogger();
+        $monoLogger = new MonoLogger();
 
         /** @noinspection PhpExpressionResultUnusedInspection */
-        $logger->globalContext($context);
+        $monoLogger->globalContext($context);
 
-        unset($logger);
+        unset($monoLogger);
     }
 }

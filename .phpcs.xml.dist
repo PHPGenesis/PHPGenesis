@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ Copyright (c) 2024. Encore Digital Group.
+  ~ All Right Reserved.
+  -->
+
+<ruleset>
+    <file>src</file>
+
+    <rule ref="Tighten"/>
+
+    <!-- No compact() and no 'dumps' -->
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array">
+                <element key="dd" value="null"/>
+                <element key="dump" value="null"/>
+                <element key="var_dump" value="null"/>
+                <element key="ray" value="null"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

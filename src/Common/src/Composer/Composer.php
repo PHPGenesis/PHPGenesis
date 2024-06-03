@@ -27,10 +27,10 @@ class Composer
 
     private static function globalInstallCheck($packageName): bool
     {
-        if (InstalledVersions::isInstalled($packageName) || InstalledVersions::isInstalled(CommonConfig::GLOBAL_PACKAGE_NAME)) {
+        if (InstalledVersions::isInstalled($packageName)) {
             return true;
         }
 
-        return false;
+        return InstalledVersions::isInstalled(CommonConfig::GLOBAL_PACKAGE_NAME);
     }
 }

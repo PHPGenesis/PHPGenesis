@@ -12,13 +12,11 @@ use stdClass;
 
 class AwsConfig implements IModuleConfig
 {
-    use ConfigUtils;
-
     const string CONFIG_CREDENTIALS_KEY = 'phpgenesis.amazonWebServices.credentials.key';
 
     const string CONFIG_CREDENTIALS_SECRET = 'phpgenesis.amazonWebServices.credentials.secret';
 
-    public ?object $credentials = null;
+    public ?AwsCredentials $credentials = null;
 
     public string $region = 'us-east-1';
 
@@ -26,8 +24,13 @@ class AwsConfig implements IModuleConfig
 
     public function __construct()
     {
-        $this->credentials = new stdClass();
-        $this->credentials->key = config(self::CONFIG_CREDENTIALS_KEY);
-        $this->credentials->secret = config(self::CONFIG_CREDENTIALS_SECRET);
+        $this->credentials = new AwsCredentials();
+        $this->credentials->key = config(self::CONFIG_CREDENTIALS_KEY) ?? null;
+        $this->credentials->secret = config(self::CONFIG_CREDENTIALS_SECRET) ?? null;
+    }
+
+    public static function get(): AwsConfig
+    {
+        return new AwsConfig();
     }
 }

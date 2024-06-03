@@ -8,7 +8,7 @@ namespace PHPGenesis\Common\Config\Traits;
 
 trait ConfigUtils
 {
-    public static function get()
+    public static function get(): self
     {
         return new self();
     }

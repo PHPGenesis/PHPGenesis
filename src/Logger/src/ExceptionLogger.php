@@ -88,6 +88,7 @@ class ExceptionLogger
             'exception.code' => $exception->getCode(),
             'exception.file' => $exception->getFile(),
             'exception.line' => $exception->getLine(),
+            'exception.trace' => $exception->getTraceAsString(),
         ], $context);
     }
 }

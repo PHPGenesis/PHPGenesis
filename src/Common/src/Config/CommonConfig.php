@@ -17,7 +17,9 @@ class CommonConfig implements IModuleConfig
     use ConfigUtils;
 
     const string FILE_NAME = PhpGenesisConfig::FILE_NAME;
+
     const string PACKAGE_NAME = Packages::Common->value;
+
     const string GLOBAL_PACKAGE_NAME = Packages::PHPGenesis->value;
 
     public static function aws(): AwsConfig

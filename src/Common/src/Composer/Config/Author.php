@@ -8,15 +8,11 @@ namespace PHPGenesis\Common\Composer\Config;
 
 class Author
 {
-    public ?string $name;
-    public ?string $email;
-    public ?string $homepage;
-    public ?string $role;
+    public ?string $name = 'Your Name';
 
-    public function __construct()
-    {
-        $this->name = 'Your Name';
-        $this->email = 'you@example.com';
-        $this->role = 'Developer';
-    }
+    public ?string $email = 'you@example.com';
+
+    public ?string $homepage;
+
+    public ?string $role = 'Developer';
 }

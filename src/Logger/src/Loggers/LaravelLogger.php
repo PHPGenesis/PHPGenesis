@@ -11,6 +11,7 @@ use PHPGenesis\Logger\ILogger;
 
 /**
  * @api
+ *
  * @internal This class is not meant to be used by developers outside of the PHPGenesis\Logger namespace.
  */
 class LaravelLogger implements ILogger
@@ -53,5 +54,15 @@ class LaravelLogger implements ILogger
     public static function emergency($message, $context = []): void
     {
         Log::emergency($message, $context);
+    }
+
+    public static function shareContext(array $context): void
+    {
+        Log::shareContext($context);
+    }
+
+    public static function withContext(array $context): void
+    {
+        Log::withContext($context);
     }
 }

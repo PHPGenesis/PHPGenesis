@@ -9,7 +9,6 @@ namespace PHPGenesis\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
-use PHPGenesis\Common\Config\CommonConfig;
 
 abstract class BaseLogger
 {
@@ -27,5 +26,12 @@ abstract class BaseLogger
         $this->logger->log($level, $message, $context);
     }
 
-
+    protected function globalContext(array $context): void
+    {
+        if (isset($_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'])) {
+            $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = array_merge($_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'], $context);
+        } else {
+            $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = $context;
+        }
+    }
 }

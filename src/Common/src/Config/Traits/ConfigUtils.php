@@ -6,14 +6,9 @@
 
 namespace PHPGenesis\Common\Config\Traits;
 
-use Exception;
-use LogicException;
-use PHPGenesis\Common\Composer\Composer;
-use PHPGenesis\Common\Exceptions\MissingConfigurationFileException;
-
 trait ConfigUtils
 {
-    public static function get()
+    public static function get(): self
     {
         return new self();
     }

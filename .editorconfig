@@ -3,8 +3,9 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
-ij_shell_use_unix_line_separator = true
+ij_php_line_comment_add_space = true
 ij_php_line_comment_at_first_column = false
+ij_shell_use_unix_line_separator = true
 indent_size = 4
 indent_style = space
 insert_final_newline = false

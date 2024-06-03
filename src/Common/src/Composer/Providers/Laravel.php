@@ -15,10 +15,10 @@ class Laravel
     public static function installed(string $packageName = 'framework'): bool
     {
 
-        if (Composer::installed(self::PACKAGE_VENDOR . '/' . $packageName) || Composer::installed(self::PACKAGE_VENDOR . '/framework')) {
+        if (Composer::installed(self::PACKAGE_VENDOR . '/' . $packageName)) {
             return true;
         }
 
-        return false;
+        return Composer::installed(self::PACKAGE_VENDOR . '/framework');
     }
 }

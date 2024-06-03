@@ -14,6 +14,7 @@ jobs:
         permissions:
             contents: write
             pull-requests: write
+
     StaticAnalysis:
         needs: Duster
         name: StaticAnalysis
@@ -22,10 +23,12 @@ jobs:
             branch: ${{ github.head_ref }}
             path: 'src/'
             phpVersion: '8.3'
+
     # Test:
     #   needs: Duster
     #   name: Run Tests
     #   uses: EncoreDigitalGroup/.github/.github/workflows/pest.yml@master
+
     AutoMerge:
         needs: StaticAnalysis
         name: AutoMerge

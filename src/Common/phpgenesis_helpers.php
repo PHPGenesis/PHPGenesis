@@ -5,7 +5,7 @@
  */
 
 if (!function_exists('phpgenesis_vendor_dir')) {
-    function phpgenesis_vendor_dir(string $path = null): string
+    function phpgenesis_vendor_dir(?string $path = null): string
     {
         if ($path == null) {
             return __DIR__ . '/../';
@@ -16,7 +16,7 @@ if (!function_exists('phpgenesis_vendor_dir')) {
 }
 
 if (!function_exists('phpgenesis_common_src')) {
-    function phpgenesis_common_src(string $path = null): string
+    function phpgenesis_common_src(?string $path = null): string
     {
         if ($path == null) {
             return __DIR__ . '/src';

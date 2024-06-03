@@ -41,6 +41,7 @@
         "pestphp/pest": "^2",
         "phpstan/extension-installer": "^1.0",
         "symplify/monorepo-builder": "^11.2",
+        "tightenco/duster": "^3.0",
         "tomasvotruba/cognitive-complexity": "^0.2.3",
         "tomasvotruba/unused-public": "^0.3.7"
     },

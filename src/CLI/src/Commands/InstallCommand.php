@@ -6,7 +6,6 @@
 
 namespace PHPGenesis\CLI\Commands;
 
-use EncoreDigitalGroup\StdLib\Exceptions\NotImplementedException;
 use PHPGenesis\CLI\Commands\CommandTraits\CommonInputs;
 use PHPGenesis\CLI\Commands\CommandTraits\ConfigurePrompts;
 use PHPGenesis\Common\Composer\Composer;
@@ -22,9 +21,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 /** @experimental */
 class InstallCommand extends Command
 {
-    const ARG_PACKAGE = 'package';
-
     use CommonInputs, ConfigurePrompts;
+
+    const ARG_PACKAGE = 'package';
 
     public InputInterface $input;
 
@@ -39,10 +38,6 @@ class InstallCommand extends Command
 
     /**
      * Interact with the user before validating the input.
-     *
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     * @return void
      */
     protected function interact(InputInterface $input, OutputInterface $output): void
     {
@@ -56,6 +51,7 @@ class InstallCommand extends Command
 
     /**
      * Execute the command.
+     *
      * @throws MissingConfigurationFileException
      */
     protected function execute(InputInterface $input, OutputInterface $output): int

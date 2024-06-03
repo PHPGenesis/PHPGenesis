@@ -9,8 +9,11 @@ namespace PHPGenesis\Common\Composer\Config;
 class Author
 {
     public ?string $name;
+
     public ?string $email;
+
     public ?string $homepage;
+
     public ?string $role;
 
     public function __construct()

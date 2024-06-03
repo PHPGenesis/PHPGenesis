@@ -9,7 +9,6 @@ namespace PHPGenesis\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
-use PHPGenesis\Common\Config\CommonConfig;
 
 abstract class BaseLogger
 {
@@ -35,9 +34,6 @@ abstract class BaseLogger
             $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = $context;
         }
 
-
         $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'];
     }
-
-
 }

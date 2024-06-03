@@ -14,6 +14,8 @@ class LoggerConfig implements IModuleConfig
     use ConfigUtils;
 
     public string $name = 'phpgenesis';
+
     public string $logFileName = 'phpgenesis.log';
+
     public string $logLevel = 'debug';
 }

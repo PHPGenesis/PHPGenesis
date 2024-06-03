@@ -8,7 +8,6 @@ namespace PHPGenesis\Common\Composer\Exceptions;
 
 use EncoreDigitalGroup\StdLib\Exceptions\BaseException;
 use EncoreDigitalGroup\StdLib\Objects\ExitCode;
-use Throwable;
 
 class PackageNotInstalledException extends BaseException
 {

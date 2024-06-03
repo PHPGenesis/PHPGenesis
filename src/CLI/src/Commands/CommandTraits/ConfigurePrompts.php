@@ -29,29 +29,29 @@ trait ConfigurePrompts
     {
         Prompt::fallbackWhen(!$input->isInteractive() || PHP_OS_FAMILY === 'Windows');
 
-        TextPrompt::fallbackUsing(fn(TextPrompt $prompt) => $this->promptUntilValid(
-            fn(): mixed => (new SymfonyStyle($input, $output))->ask($prompt->label, $prompt->default !== '' && $prompt->default !== '0' ? $prompt->default : null) ?? '',
+        TextPrompt::fallbackUsing(fn (TextPrompt $prompt) => $this->promptUntilValid(
+            fn (): mixed => (new SymfonyStyle($input, $output))->ask($prompt->label, $prompt->default !== '' && $prompt->default !== '0' ? $prompt->default : null) ?? '',
             $prompt->required,
             $prompt->validate,
             $output
         ));
 
-        PasswordPrompt::fallbackUsing(fn(PasswordPrompt $prompt) => $this->promptUntilValid(
-            fn(): mixed => (new SymfonyStyle($input, $output))->askHidden($prompt->label) ?? '',
+        PasswordPrompt::fallbackUsing(fn (PasswordPrompt $prompt) => $this->promptUntilValid(
+            fn (): mixed => (new SymfonyStyle($input, $output))->askHidden($prompt->label) ?? '',
             $prompt->required,
             $prompt->validate,
             $output
         ));
 
-        ConfirmPrompt::fallbackUsing(fn(ConfirmPrompt $prompt) => $this->promptUntilValid(
-            fn(): bool => (new SymfonyStyle($input, $output))->confirm($prompt->label, $prompt->default),
+        ConfirmPrompt::fallbackUsing(fn (ConfirmPrompt $prompt) => $this->promptUntilValid(
+            fn (): bool => (new SymfonyStyle($input, $output))->confirm($prompt->label, $prompt->default),
             $prompt->required,
             $prompt->validate,
             $output
         ));
 
-        SelectPrompt::fallbackUsing(fn(SelectPrompt $prompt) => $this->promptUntilValid(
-            fn(): mixed => (new SymfonyStyle($input, $output))->choice($prompt->label, $prompt->options, $prompt->default),
+        SelectPrompt::fallbackUsing(fn (SelectPrompt $prompt) => $this->promptUntilValid(
+            fn (): mixed => (new SymfonyStyle($input, $output))->choice($prompt->label, $prompt->options, $prompt->default),
             false,
             $prompt->validate,
             $output
@@ -60,7 +60,7 @@ trait ConfigurePrompts
         MultiSelectPrompt::fallbackUsing(function (MultiSelectPrompt $prompt) use ($input, $output) {
             if ($prompt->default !== []) {
                 return $this->promptUntilValid(
-                    fn(): mixed => (new SymfonyStyle($input, $output))->choice($prompt->label, $prompt->options, implode(',', $prompt->default), true),
+                    fn (): mixed => (new SymfonyStyle($input, $output))->choice($prompt->label, $prompt->options, implode(',', $prompt->default), true),
                     $prompt->required,
                     $prompt->validate,
                     $output
@@ -68,7 +68,7 @@ trait ConfigurePrompts
             }
 
             return $this->promptUntilValid(
-                fn() => collect(
+                fn () => collect(
                     (new SymfonyStyle($input, $output))->choice(
                         $prompt->label,
                         array_is_list($prompt->options)
@@ -84,7 +84,7 @@ trait ConfigurePrompts
             );
         });
 
-        SuggestPrompt::fallbackUsing(fn(SuggestPrompt $prompt) => $this->promptUntilValid(
+        SuggestPrompt::fallbackUsing(fn (SuggestPrompt $prompt) => $this->promptUntilValid(
             function () use ($prompt, $input, $output) {
                 $question = new Question($prompt->label, $prompt->default);
 
@@ -103,10 +103,10 @@ trait ConfigurePrompts
     /**
      * Prompt the user until the given validation callback passes.
      *
-     * @param Closure $prompt
-     * @param bool|string $required
-     * @param Closure|null $validate
-     * @param OutputInterface $output
+     * @param  Closure  $prompt
+     * @param  bool|string  $required
+     * @param  Closure|null  $validate
+     * @param  OutputInterface  $output
      */
     protected function promptUntilValid($prompt, $required, $validate, $output): mixed
     {

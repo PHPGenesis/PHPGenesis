@@ -9,6 +9,7 @@ namespace PHPGenesis\Common\Container;
 use Illuminate\Container\Container as IlluminateContainer;
 use Illuminate\Foundation\Application;
 
+/** @experimental */
 class PhpGenesisContainer extends IlluminateContainer
 {
     public function __construct()

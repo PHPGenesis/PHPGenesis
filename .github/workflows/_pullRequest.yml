@@ -24,12 +24,18 @@ jobs:
             path: 'src/'
             phpVersion: '8.3'
 
-    # Test:
-    #   needs: Duster
-    #   name: Run Tests
-    #   uses: EncoreDigitalGroup/.github/.github/workflows/pest.yml@master
+    Test:
+        needs: Duster
+        name: Test
+        uses: EncoreDigitalGroup/ci-pipelines/.github/workflows/pest.yml@v1
+        with:
+            useLaravelEnvDecryptionKey: false
+            useComposerAuthJson: false
+            phpVersion: '8.3'
+            branch: ${{ github.head_ref }}
+            enforceCoverage: false
 
     AutoMerge:
-        needs: StaticAnalysis
+        needs: [ StaticAnalysis, Test ]
         name: AutoMerge
         uses: EncoreDigitalGroup/.github/.github/workflows/dependabotAutoMerge.yml@v1

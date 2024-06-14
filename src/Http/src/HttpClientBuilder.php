@@ -35,7 +35,7 @@ class HttpClientBuilder
             });
 
             // Alias the Http facade to the HTTP Factory
-            HttpFacade::setFacadeApplication($this->container->getInstance());
+            HttpFacade::setFacadeApplication(null);
             HttpFacade::resolved(function ($httpFactory) {
                 HttpFacade::swap($httpFactory);
             });

@@ -27,10 +27,8 @@ jobs:
     Test:
         needs: Duster
         name: Test
-        uses: EncoreDigitalGroup/ci-pipelines/.github/workflows/pest.yml@v1
+        uses: EncoreDigitalGroup/.github/.github/workflows/pest.yml@v1
         with:
-            useLaravelEnvDecryptionKey: false
-            useComposerAuthJson: false
             phpVersion: '8.3'
             branch: ${{ github.head_ref }}
             enforceCoverage: false

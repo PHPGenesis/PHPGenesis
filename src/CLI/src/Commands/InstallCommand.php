@@ -26,7 +26,6 @@ class InstallCommand extends Command
     const ARG_PACKAGE = 'package';
 
     public InputInterface $input;
-
     public OutputInterface $output;
 
     protected function configure(): void

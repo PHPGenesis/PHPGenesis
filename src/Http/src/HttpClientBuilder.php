@@ -18,6 +18,7 @@ class HttpClientBuilder
     public function __construct()
     {
         $this->container = PhpGenesisContainer::getInstance();
+        $this->setupHttpFacade();
     }
 
     protected function setupHttpFacade(): HttpFacade|HttpFactory
@@ -25,22 +26,22 @@ class HttpClientBuilder
         if ($this->container->isLaravel()) {
             // Use Laravel's existing Http facade
             return HttpFacade::getFacadeRoot();
-        } else {
-            // Set up a new container and Http facade
-            $httpFactory = new HttpFactory();
-
-            // Bind the HTTP Factory to the container
-            $this->container->getInstance()->singleton('http', function () use ($httpFactory) {
-                return $httpFactory;
-            });
-
-            // Alias the Http facade to the HTTP Factory
-            HttpFacade::setFacadeApplication(null);
-            HttpFacade::resolved(function ($httpFactory) {
-                HttpFacade::swap($httpFactory);
-            });
-
-            return $httpFactory;
         }
+
+        // Set up a new container and Http facade
+        $clientFactory = new HttpFactory();
+
+        // Bind the HTTP Factory to the container
+        $this->container->getInstance()->singleton('http', function () use ($clientFactory) {
+            return $clientFactory;
+        });
+
+        // Alias the Http facade to the HTTP Factory
+        HttpFacade::setFacadeApplication(null);
+        HttpFacade::resolved(function ($httpFactory): void {
+            HttpFacade::swap($httpFactory);
+        });
+
+        return $clientFactory;
     }
 }

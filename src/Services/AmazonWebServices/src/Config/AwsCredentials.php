@@ -9,6 +9,5 @@ namespace PHPGenesis\Services\AmazonWebServices\Config;
 class AwsCredentials
 {
     public ?string $key = null;
-
     public ?string $secret = null;
 }

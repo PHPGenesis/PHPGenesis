@@ -9,10 +9,7 @@ namespace PHPGenesis\Common\Composer\Config;
 class Author
 {
     public ?string $name = 'Your Name';
-
     public ?string $email = 'you@example.com';
-
     public ?string $homepage;
-
     public ?string $role = 'Developer';
 }

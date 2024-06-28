@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @experimental
+ *
  * @method static \Illuminate\Http\Client\Factory globalMiddleware(callable $middleware)
  * @method static \Illuminate\Http\Client\Factory globalRequestMiddleware(callable $middleware)
  * @method static \Illuminate\Http\Client\Factory globalResponseMiddleware(callable $middleware)
@@ -97,7 +98,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Illuminate\Http\Client\PendingRequest|mixed unless(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
  *
  * @see \Illuminate\Http\Client\Factory
- * */
+ */
 class HttpClient extends Facade
 {
     protected static function getFacadeAccessor(): mixed

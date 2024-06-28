@@ -18,6 +18,7 @@ class HttpClientBuilder
     public function __construct()
     {
         $this->container = PhpGenesisContainer::getInstance();
+        $this->setupHttpFacade();
     }
 
     protected function setupHttpFacade(): HttpFacade|HttpFactory

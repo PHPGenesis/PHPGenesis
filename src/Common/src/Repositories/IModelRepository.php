@@ -6,8 +6,6 @@
 
 namespace PHPGenesis\Common\Repositories;
 
-use Illuminate\Support\Collection;
-
 interface IModelRepository
 {
     /** @phpstan-ignore-next-line */

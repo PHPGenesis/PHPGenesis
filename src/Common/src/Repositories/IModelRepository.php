@@ -6,19 +6,21 @@
 
 namespace PHPGenesis\Common\Repositories;
 
+use Illuminate\Support\Collection;
+
 interface IModelRepository
 {
-    public function create(array $attributes = []);
+    public function create(array $attributes = []): static;
 
-    public function firstOrCreate(array $attributes = [], array $values = []);
+    public function firstOrCreate(array $attributes = [], array $values = []): static;
 
-    public function all();
+    public function all(): Collection;
 
-    public function find(string|int $id);
+    public function find(string|int $id): static;
 
-    public function update(array $values);
+    public function update(array $values): static;
 
-    public function updateOrCreate(array $attributes = [], array $values = []);
+    public function updateOrCreate(array $attributes = [], array $values = []): static;
 
-    public function delete();
+    public function delete(): void;
 }

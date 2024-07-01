@@ -31,11 +31,6 @@ parameters:
 			path: src/Common/src/Composer/Composer.php
 
 		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Config\\\\CommonConfig\\:\\:get\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Config/CommonConfig.php
-
-		-
 			message: "#^Method PHPGenesis\\\\Common\\\\Config\\\\IModuleConfig\\:\\:get\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Common/src/Config/IModuleConfig.php
@@ -86,46 +81,6 @@ parameters:
 			path: src/Common/src/Laravel/Providers/PhpGenesisServiceProvider.php
 
 		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:all\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:create\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:delete\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:find\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:firstOrCreate\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:update\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Repositories\\\\IModelRepository\\:\\:updateOrCreate\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Common/src/Repositories/IModelRepository.php
-
-		-
-			message: "#^Expression \"\\$_GLOBAL\\['PHPGENESIS_LOGGER_CONTEXT'\\]\" on a separate line does not do anything\\.$#"
-			count: 1
-			path: src/Logger/src/BaseLogger.php
-
-		-
 			message: "#^Parameter \\#3 \\$context of method Monolog\\\\Logger\\:\\:log\\(\\) expects array, array\\|null given\\.$#"
 			count: 1
 			path: src/Logger/src/BaseLogger.php
@@ -139,11 +94,6 @@ parameters:
 			message: "#^Variable \\$_GLOBAL in isset\\(\\) is never defined\\.$#"
 			count: 1
 			path: src/Logger/src/BaseLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Config\\\\LoggerConfig\\:\\:get\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Config/LoggerConfig.php
 
 		-
 			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:alert\\(\\) has parameter \\$context with no type specified\\.$#"
@@ -228,11 +178,6 @@ parameters:
 		-
 			message: "#^Function config not found\\.$#"
 			count: 2
-			path: src/Services/AmazonWebServices/src/Config/AwsConfig.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Services\\\\AmazonWebServices\\\\Config\\\\AwsConfig\\:\\:get\\(\\) has no return type specified\\.$#"
-			count: 1
 			path: src/Services/AmazonWebServices/src/Config/AwsConfig.php
 
 		-
